@@ -1,0 +1,20 @@
+#Iniciar o Terraform:
+terraform init
+
+#Reformatar: Formatar o código no estilo padrão do Terraform.
+terraform fmt
+
+#Valida se a configuração inserida no código é valida.
+terraform validate
+
+#Planeja e revisa as configurações dos recursos que o Terraform
+terraform plan -out ".\plan.out"
+
+#Aplica as configurações do Terraform.
+terraform apply
+
+#Aplica as configurações utilizando o plano criado
+terraform apply plan.out
+
+#Destroi as configurações criadas
+terraform destroy
