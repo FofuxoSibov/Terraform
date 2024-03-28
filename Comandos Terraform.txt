@@ -1,3 +1,10 @@
+#Instalação AWS CLI
+#Instalação do Terraform
+#Instalação VS Code
+#Inserir as credenciais - C:\user\USUARIO\.aws\credentials (tem que ser feito todo dia - conta estudante)
+#Qual o formatado - linguágem do Terraform? HCL "HashCorp Language"
+#Qual a extensão? .tf
+
 #Iniciar o Terraform:
 terraform init
 
@@ -8,13 +15,13 @@ terraform fmt
 terraform validate
 
 #Planeja e revisa as configurações dos recursos que o Terraform
-terraform plan -out ".\plan.out"
+terraform plan -out ".\plano.out"
 
 #Aplica as configurações do Terraform.
 terraform apply
 
 #Aplica as configurações utilizando o plano criado
-terraform apply plan.out
+terraform apply plano.out
 
 #Destroi as configurações criadas
 terraform destroy
