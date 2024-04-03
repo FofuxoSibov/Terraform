@@ -1,9 +1,11 @@
-#Instalação AWS CLI
+#Instalação AWS CLI --version 3.11.8
 #Instalação do Terraform
 #Instalação VS Code
 #Inserir as credenciais - C:\user\USUARIO\.aws\credentials (tem que ser feito todo dia - conta estudante)
 #Qual o formatado - linguágem do Terraform? HCL "HashCorp Language"
 #Qual a extensão? .tf
+
+#Colocar o arquivo de Senha.key dentro da pasta de Projetos Terraform
 
 #Iniciar o Terraform:
 terraform init
@@ -11,16 +13,22 @@ terraform init
 #Reformatar: Formatar o código no estilo padrão do Terraform.
 terraform fmt
 
+Aula 2 - EC2
+Consulta Subrede exibindo o nome, bloco de IPs e id
+
+aws ec2 describe-subnets --query 'Subnets[*].{ID:SubnetId, CIDR:CidrBlock, Name:Tags[?Key==`Name`].Value | [0]}'
+
+
 #Valida se a configuração inserida no código é valida.
 terraform validate
 
 #Planeja e revisa as configurações dos recursos que o Terraform
-terraform plan -out ".\plano.out"
+terraform plan -out ".\plano-v1.out"
 
-#Aplica as configurações do Terraform.
+#Aplica as configurações do Terraform para todos os planos.
 terraform apply
 
-#Aplica as configurações utilizando o plano criado
+#Aplica as configurações utilizando um plano especifico que foi criado
 terraform apply plano.out
 
 #Destroi as configurações criadas
